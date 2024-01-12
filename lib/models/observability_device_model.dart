@@ -12,18 +12,21 @@ class ObservabilityDeviceModel {
 
   String? deviceModel;
 
-  Future<void> intialisedModel() async {
+  Future<bool?> intialisedModel() async {
     final DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
     try {
       if (Platform.isAndroid) {
         final AndroidDeviceInfo androidInfo = await deviceInfo.androidInfo;
         deviceModel = androidInfo.model;
+        return true;
       } else if (Platform.isIOS) {
         final IosDeviceInfo iosInfo = await deviceInfo.iosInfo;
         deviceModel = iosInfo.utsname.machine;
+        return true;
       }
     } catch (e) {
-      return;
+      return null;
     }
+    return null;
   }
 }

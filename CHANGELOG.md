@@ -33,3 +33,19 @@
 ## 1.0.8
 
 - Improved prints.
+
+## 1.0.9
+
+- Fixed device model null issue
+
+## 2.0.0
+
+- Fixed device model null issue
+
+## 2.0.1
+
+- Added device model singleton
+
+## 2.0.2
+
+- Initialise device model before observability request

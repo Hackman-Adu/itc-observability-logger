@@ -16,6 +16,8 @@ class AppObservabilityLogger extends ITCObservabilityLogger {
   String get observabilityLogGroup => "log group";
 
   Future observe(String message) async {
+    // Intialise device model first
+    await ObservabilityDeviceModel.instance.intialisedModel();
     var response = await observeRequest(message);
     print(response.toString());
   }

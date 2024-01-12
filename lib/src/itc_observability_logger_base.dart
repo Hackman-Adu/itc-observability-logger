@@ -13,15 +13,17 @@ abstract class ITCObservabilityLogger {
   ObservabilityModel _observabilityModel(String message) =>
       ObservabilityModel(message, observabilityLogGroup);
 
-  bool deviceModelInitialized =
-      ObservabilityDeviceModel.instance.deviceModel != null;
-
-  Future _initDeviceModel() async =>
-      await ObservabilityDeviceModel.instance.intialisedModel();
+  bool get deviceModelNotInitialized =>
+      ObservabilityDeviceModel.instance.deviceModel == null;
 
   Future<ObservabilityResponse?> observeRequest(String message) async {
     try {
-      if (!deviceModelInitialized) await _initDeviceModel();
+      if (deviceModelNotInitialized) {
+        return ObservabilityResponse(
+            status: ResponseStatus.fail,
+            responseBody:
+                "Initialise device model ---- Call [ObservabilityDeviceModel.instance.intialisedModel()]");
+      }
       print(_observabilityModel(message).printRequest(observabilityRequestUrl));
       var response = await client.post(Uri.parse(observabilityRequestUrl),
           body: _observabilityModel(message).toJson(),
