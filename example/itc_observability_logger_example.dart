@@ -2,16 +2,21 @@ import 'package:itc_observability_logger/itc_observability_logger.dart';
 
 void main() async {
   AppObservabilityLogger logger = AppObservabilityLogger();
-  await logger.observe("YOUR_OBSERVABILITY_MESSAGE");
+  await logger.observeRequest("OBSERVABILITY_MESSAGE");
 }
 
-class AppObservabilityLogger extends ObservabilityLogger {
+class AppObservabilityLogger extends ITCObservabilityLogger {
   @override
-  String get logGroup => "YOUR_OBSERVABILITY_LOG_GROUP";
+  Map<String, String> get observabilityRequestHeader => {};
 
   @override
-  Map<String, String> get requestHeader => {};
+  String get observabilityRequestUrl => "url";
 
   @override
-  String get requestUrl => "YOUR_REQUEST_URL";
+  String get observabilityLogGroup => "log group";
+
+  Future observe(String message) async {
+    var response = await observeRequest(message);
+    print(response.toString());
+  }
 }

@@ -2,12 +2,13 @@ import 'dart:io';
 
 import 'package:device_info_plus/device_info_plus.dart';
 
-class DeviceModel {
-  DeviceModel._();
+class ObservabilityDeviceModel {
+  ObservabilityDeviceModel._();
 
-  static final DeviceModel _instance = DeviceModel._();
+  static final ObservabilityDeviceModel _instance =
+      ObservabilityDeviceModel._();
 
-  static DeviceModel get instance => _instance;
+  static ObservabilityDeviceModel get instance => _instance;
 
   String? deviceModel;
 

@@ -1,6 +1,6 @@
 name: itc_observability_logger
 description: Lightweight observability logger for Flutter mobile app developers in ITC Consortium.
-version: 1.0.0
+version: 1.0.8
 repository: https://github.com/Hackman-Adu/itc-observability-logger.git
 
 environment:

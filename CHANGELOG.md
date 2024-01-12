@@ -1,3 +1,35 @@
 ## 1.0.0
 
 - Initial version.
+
+## 1.0.1
+
+- Changed method name.
+
+## 1.0.2
+
+- Changed methods name.
+
+## 1.0.3
+
+- Resolved json error.
+
+## 1.0.4
+
+- Improved prints.
+
+## 1.0.5
+
+- Styled prints.
+
+## 1.0.6
+
+- Removed device initialise from main.
+
+## 1.0.7
+
+- Renaming files and methods.
+
+## 1.0.8
+
+- Improved prints.

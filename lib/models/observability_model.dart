@@ -17,9 +17,8 @@ class ObservabilityModel {
     timestamp = DateTime.now().millisecondsSinceEpoch;
   }
 
-//print request body
-  @override
-  String toString() => json.encode(toJson());
+  String printRequest(String url) =>
+      "✨✨✨✨✨✨✨✨✨✨ Observability Request ✨✨✨✨✨✨✨✨✨✨\nUrl: $url  Body:${toJson()}";
 
   String toJson() {
     var map = {
