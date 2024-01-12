@@ -22,7 +22,7 @@ abstract class ITCObservabilityLogger {
         return ObservabilityResponse(
             status: ResponseStatus.fail,
             responseBody:
-                "Initialise device model ---- Call [ObservabilityDeviceModel.instance.intialisedModel()]");
+                "Initialise device model---- Call [ObservabilityDeviceModel.instance.intialisedModel()]");
       }
       print(_observabilityModel(message).printRequest(observabilityRequestUrl));
       var response = await client.post(Uri.parse(observabilityRequestUrl),
