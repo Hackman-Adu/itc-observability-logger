@@ -15,9 +15,8 @@ class AppObservabilityLogger extends ITCObservabilityLogger {
   @override
   String get observabilityLogGroup => "log group";
 
+  /// Before calling [observe], ensure you've called [ObservabilityDeviceModel.instance.intialisedModel] in your application main.dart
   Future observe(String message) async {
-    // Intialise device model first
-    await ObservabilityDeviceModel.instance.intialisedModel();
     var response = await observeRequest(message);
     print(response.toString());
   }
