@@ -49,3 +49,7 @@
 ## 2.0.2
 
 - Initialise device model before observability request
+
+## 2.0.3
+
+- Final push
