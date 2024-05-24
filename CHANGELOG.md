@@ -53,3 +53,7 @@
 ## 2.0.3
 
 - Final push
+
+## 2.0.4
+
+- Update dependencies to latest
