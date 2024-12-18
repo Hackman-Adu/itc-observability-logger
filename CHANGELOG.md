@@ -57,3 +57,7 @@
 ## 2.0.4
 
 - Update dependencies to latest
+
+## 2.0.5
+
+- Updated dependencies
